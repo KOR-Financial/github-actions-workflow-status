@@ -20,4 +20,4 @@ jobs:
         branch: main
         run: 1
     - name: echo
-      run: echo ${{ parseJSON(steps.check-ci.outputs) }}
+      run: echo ${{ toJSON(steps.check-ci.outputs) }}
