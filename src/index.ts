@@ -13,7 +13,8 @@ async function run(): Promise<void> {
     const token = core.getInput('token', {required: true});
     const workflow = core.getInput('workflow', {required: true});
     const branch = core.getInput('branch');
-    const event = getOptionalInput('event')
+    const event = getOptionalInput('event');
+    let run = getOptionalInput('run') === undefined ? 0 : parseInt(getOptionalInput('run') as string);
     let fullRepo = getOptionalInput('repo');
     if (fullRepo === undefined) {
       fullRepo = getRepository();
@@ -35,7 +36,7 @@ async function run(): Promise<void> {
       per_page: 1,
     });
 
-    const latest = getFirst(workflow_runs);
+    const latest = getFirst(workflow_runs, run);
 
     if (latest !== null) {
       core.info(`status: ${latest.status}`);
