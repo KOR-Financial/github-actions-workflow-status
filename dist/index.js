@@ -632,13 +632,12 @@ function getOwnerAndRepo(full) {
 }
 exports.getOwnerAndRepo = getOwnerAndRepo;
 function getFirst(arr, index) {
-    for (let i = index; i < arr.length; i++) {
-        let obj = arr[i];
-        if (obj['event'] !== 'pull_request') {
-            return obj;
-        }
+    if (arr.length >= 1) {
+        return arr[index];
     }
-    return null;
+    else {
+        return null;
+    }
 }
 exports.getFirst = getFirst;
 
@@ -1096,7 +1095,7 @@ function run() {
                 workflow_id: workflow,
                 branch,
                 event,
-                per_page: 10,
+                per_page: 2,
             });
             core.info(`runs ${JSON.stringify(workflow_runs)}`);
             const latest = utils_1.getFirst(workflow_runs, run);

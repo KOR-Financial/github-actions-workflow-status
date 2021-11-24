@@ -30,9 +30,9 @@ export function getOwnerAndRepo(full: string): [string, string] {
   return results as [string, string];
 }
 
-export function getFirst<T>(arr: T[]): T | null {
+export function getFirst<T>(arr: T[], index: number): T | null {
   if (arr.length >= 1) {
-    return arr[0];
+    return arr[index];
   } else {
     return null;
   }
