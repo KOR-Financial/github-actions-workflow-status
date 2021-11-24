@@ -10,7 +10,7 @@ jobs:
 #    - run: ччч
     - name: Check CI
       id: check-ci
-      uses: KOR-Financial/github-actions-workflow-status@test
+      uses: KOR-Financial/github-actions-workflow-status@main
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         workflow: custom.yml
