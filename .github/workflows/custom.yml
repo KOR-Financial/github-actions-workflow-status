@@ -20,4 +20,4 @@ jobs:
         branch: main
         run: 1
     - name: echo
-      run: echo ${{ steps.check-ci.outputs.status }}
+      run: echo ${{ steps.check-ci.outputs.resolution }}
