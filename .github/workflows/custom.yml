@@ -19,5 +19,7 @@ jobs:
 #        event: push, workflow_dispatch
         branch: main
         run: 1
-    - name: echo
-      run: echo '${{ toJSON(steps.check-ci.outputs) }}'
+    - name: echo satus
+      run: echo '${{ steps.check-ci.outputs.status }}'
+    - name: echo conclusion
+      run: echo '${{ steps.check-ci.outputs.conclusion }}'
