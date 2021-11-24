@@ -1096,7 +1096,7 @@ function run() {
                 workflow_id: workflow,
                 branch,
                 event,
-                per_page: 3,
+                per_page: 10,
             });
             core.info(`runs ${JSON.stringify(workflow_runs)}`);
             const latest = utils_1.getFirst(workflow_runs, run);

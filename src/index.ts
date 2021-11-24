@@ -34,7 +34,7 @@ async function run(): Promise<void> {
       workflow_id: workflow,
       branch,
       event,
-      per_page: 3,
+      per_page: 10,
     });
     core.info(`runs ${JSON.stringify(workflow_runs)}`);
     const latest = getFirst(workflow_runs, run);
