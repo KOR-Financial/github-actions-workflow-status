@@ -9,7 +9,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-    - run: ччч
+#    - run: ччч
     - name: Check CI
       id: check-ci
       uses: KOR-Financial/github-actions-workflow-status@main
